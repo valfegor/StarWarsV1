@@ -15,7 +15,7 @@ for(let i =1 ; i<=cantidad;i++){
 
 const obtener = (nuevoarray)=>{
     let html = "";
-    document.getElementById("datos_personajes").innerHTML="";
+    document.getElementById("container").innerHTML="";
     nuevoarray.forEach(element => {
       
         
@@ -41,21 +41,23 @@ const pintar = (data,html)=>{
     }
     console.log(genero);
     
-    html += `<div class="card">`
-    html += `<h4>Nombre : ${data.name}</h4>`
-    html += `<p>Masa : ${data.mass}</p>` 
-    html += `<p>Color de cabello : ${data.hair_color}</p>`
-    html += `<p>Color de piel : ${data.skin_color}</p>`
-    html += `<p>Color de ojos : ${data.eye_color}</p>` 
-    html += `<p>Genero : ${genero}</p>`  
-    html += `</div>`
+    html+=`<div class="container">`
+    html+=`<div class="card">`
+    html+=`<span class="tag">Color de cabello : ${data.hair_color}</span>`
+    html+=`<span class="tag">Peso : ${data.mass}Kg</span>`
+    html+=`<div class="name">Nombre : ${data.name}</div>`
+    html+=`<p>Genero : ${genero}</p>`
+    html+=`<p>Color de ojos : ${data.eye_color}</p>`
+    html+=`<p>Color de piel : ${data.skin_color}</p>`
+    html+=`</div>`
+    html+=`</div>`
     
      
     
 
     
 
-    document.getElementById("datos_personajes").innerHTML += html;
+    document.getElementById("container").innerHTML += html;
 
 
 }
